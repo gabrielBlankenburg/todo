@@ -9,23 +9,50 @@
 <ion-content padding>
 	<ion-grid>
 		<ion-row>
-			<ion-col col-8>
-			    <ion-input placeholder="Add an item" [formControl]="fc"></ion-input>
+			<ion-col col-12>
+				<ion-list>
+					<ion-item>
+						<ion-label color="primary">Task</ion-label>
+						<ion-input placeholder="save the world" [(ngModel)]="formConfig.task">
+						</ion-input>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+			<ion-col col-12>
+				<ion-list>
+					<ion-item>
+						<ion-label color="primary">Label</ion-label>
+						<ion-select placeholder="Aero Blue" [(ngModel)]="formConfig.label">
+							<ion-option *ngFor="let label of labels" [value]='label'>
+								{{label.name}}
+							</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+			<ion-col col-12>
+				<button ion-button full (click)="addButton()">Add</button>
+			</ion-col>
+			<!-- <ion-col col-8>
+			    <ion-input placeholder="Add an item" [formControl]="task"></ion-input>
 			</ion-col>
 			<ion-col col-4>
-			    <button ion-button (click)="addButton()">Add</button>
-			</ion-col>
+			    <button ion-button full (click)="addButton()">Add</button>
+			</ion-col> -->
 		</ion-row>
 		<ion-row>
 			<ion-col col-12>
 				<ion-list>
-					<ion-item *ngFor="let item of items">
-						{{item}}
-						<span class="todo-item">
-							<button ion-button small color="danger" (click)="remove(items.indexOf(item))">
-								<ion-icon name="close"></ion-icon>
-							</button>
-						</span>
+					<ion-item *ngFor="let item of items" 
+					 [ngStyle]="{'background-color': item.color}">
+						<div>
+							{{item.task}}
+							<span class="todo-item">
+								<button ion-button small color="danger" (click)="remove(items.indexOf(item))">
+									<ion-icon name="close"></ion-icon>
+								</button>
+							</span>
+						</div>
 					</ion-item>
 				</ion-list>
 			</ion-col>
