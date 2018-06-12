@@ -1,0 +1,45 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle right><ion-icon name="menu"></ion-icon></button>
+		<ion-title>
+			Labels
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid>
+		<ion-list>
+			<ion-item>
+				<ion-label>Red</ion-label>
+				<ion-range min="0" max="255" pin="true" [(ngModel)]="colors.red">
+					<ion-label range-left><span [style.background]="pickedColors.red" padding></span></ion-label>
+					<ion-label range-left>0</ion-label>
+					<ion-label range-right>255</ion-label>
+				</ion-range>
+			</ion-item>
+			<ion-item>
+				<ion-label>Green</ion-label>
+				<ion-range min="0" max="255" pin="true" [(ngModel)]="colors.green">
+					<ion-label range-left><span [style.background]="pickedColors.green" padding></span></ion-label>
+					<ion-label range-left>0</ion-label>
+					<ion-label range-right>255</ion-label>
+				</ion-range>
+			</ion-item>
+			<ion-item>
+				<ion-label>Blue</ion-label>
+				<ion-range min="0" max="255" pin="true" [(ngModel)]="colors.blue">
+					<ion-label range-left><span [style.background]="pickedColors.blue" padding></span></ion-label>
+					<ion-label range-left>0</ion-label>
+					<ion-label range-right>255</ion-label>
+				</ion-range>
+			</ion-item>
+		</ion-list>
+		<ion-row style="height:50px;">
+			<ion-col col-3></ion-col>
+			<ion-col [style.background]="color" col-6>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

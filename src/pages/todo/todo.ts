@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -14,7 +13,7 @@ export class TodoPage {
 	private labels:any[];
 	private formConfig:any;
 
-	constructor(public navCtrl: NavController) {
+	constructor() {
 		this.items = [];
 		this.task = new FormControl();
 		this.labels = [

@@ -3,20 +3,21 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Nav } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 import { TodoPage } from '../pages/todo/todo';
+import { LabelPage } from '../pages/label/label';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
 
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild('mycontent') nav: NavController
   
-  rootPage:any = TodoPage;
+  rootPage:any = LabelPage;
 
-  pages = {'todo': TodoPage};
+  pages = {'todo': TodoPage, 'labels': LabelPage};
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

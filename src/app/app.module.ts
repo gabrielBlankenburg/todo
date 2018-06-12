@@ -8,11 +8,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { TodoPage } from '../pages/todo/todo';
+import { LabelPage } from '../pages/label/label';
 
 @NgModule({
   declarations: [
     MyApp,
     TodoPage,
+    LabelPage,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { TodoPage } from '../pages/todo/todo';
   entryComponents: [
     MyApp,
     TodoPage,
+    LabelPage
   ],
   providers: [
     StatusBar,
