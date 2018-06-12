@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild  } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { Nav } from 'ionic-angular';
+
 import { TodoPage } from '../pages/todo/todo';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+
+  @ViewChild(Nav) nav: Nav;
+  
   rootPage:any = TodoPage;
+
+  pages = {'todo': TodoPage};
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,6 +26,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  openPage(page) {
+    this.nav.push(this.pages[page]);
   }
 }
 

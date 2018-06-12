@@ -7,13 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { TodoPage } from '../pages/todo/todo';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     TodoPage,
   ],
   imports: [
@@ -24,7 +22,6 @@ import { TodoPage } from '../pages/todo/todo';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     TodoPage,
   ],
   providers: [
